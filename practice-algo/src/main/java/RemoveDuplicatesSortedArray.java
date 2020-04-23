@@ -15,7 +15,7 @@ public class RemoveDuplicatesSortedArray {
         System.out.printf(Arrays.toString(rs));
     }
 
-    // using java 8 + stream
+    // using java 8 stream
     public void removeV2(int[] nums){
         nums = Arrays.stream(nums).distinct().toArray();
         System.out.printf(Arrays.toString(nums));
