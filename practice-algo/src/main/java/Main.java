@@ -151,6 +151,8 @@ public class Main {
         System.out.printf(String.valueOf(matching.binaryPatternMatching("010", "amazing")));
     }
 
+    //Given an array nums of n integers, are there elements a, b, c in nums such that a + b + c = 0?
+    //Find all unique triplets in the array which gives the sum of zero.
     private static void threeSum(){
         ThreeSum threeSum = new ThreeSum();
         threeSum.threeSum(new int[]{3,0,-2,-1,1,2}).stream().forEach(i ->{
