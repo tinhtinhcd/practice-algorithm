@@ -2,6 +2,7 @@ import Util.ListNode;
 import Util.TreeNode;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -18,8 +19,13 @@ public class Main {
 //        add2Num();
 //        sortColor();
 //        serialize();
-        majorityElement();
+//        majorityElement();
+//        parentheses();
+//        longestIncrease();
+        excel();
     }
+
+
 
 
 
@@ -225,4 +231,61 @@ public class Main {
         System.out.printf(String.valueOf(majorityElement.majorityElement(new int[]{1,2,3,3})));
     }
 
+
+    //Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
+    //For example, given n = 3, a solution set is:
+    //[
+    //  "((()))",
+    //  "(()())",
+    //  "(())()",
+    //  "()(())",
+    //  "()()()"
+    //]
+
+    private static void parentheses(){
+        GenerateParentheses generateParentheses = new GenerateParentheses();
+        List<String> rs = generateParentheses.generateParenthesis(3);
+        rs.stream().forEach(str->{
+            System.out.println(str);
+        });
+    }
+
+
+    //Given an unsorted array of integers, find the length of longest increasing subsequence.
+    //Example:
+    //Input: [10,9,2,5,3,7,101,18]
+    //Output: 4
+    //Explanation: The longest increasing subsequence is [2,3,7,101], therefore the length is 4.
+
+    private static void longestIncrease(){
+        LongestIncreasingSubsequence longest = new LongestIncreasingSubsequence();
+        longest.lengthOfLIS(new int[]{0, 8, 4, 12, 2});
+    }
+
+    //Given a column title as appear in an Excel sheet, return its corresponding column number.
+    //For example:
+    //    A -> 1
+    //    B -> 2
+    //    C -> 3
+    //    ...
+    //    Z -> 26
+    //    AA -> 27
+    //    AB -> 28
+    //    ...
+    //Example 1:
+    //Input: "A"
+    //Output: 1
+    //
+    //Example 2:
+    //Input: "AB"
+    //Output: 28
+    //
+    //Example 3:
+    //Input: "ZY"
+    //Output: 701
+
+    private static void excel(){
+        ExcelSheetColumnNumber number = new ExcelSheetColumnNumber();
+        System.out.printf(String.valueOf(number.titleToNumber("AA")));
+    }
 }
