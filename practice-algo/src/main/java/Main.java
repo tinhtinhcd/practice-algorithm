@@ -22,7 +22,9 @@ public class Main {
 //        majorityElement();
 //        parentheses();
 //        longestIncrease();
-        excel();
+//        excel();
+//        lengthOfLongestSubstring();
+        longestPalindromic();
     }
 
 
@@ -287,5 +289,29 @@ public class Main {
     private static void excel(){
         ExcelSheetColumnNumber number = new ExcelSheetColumnNumber();
         System.out.printf(String.valueOf(number.titleToNumber("AA")));
+    }
+
+
+    //Given a string, find the length of the longest substring without repeating characters.
+    //Example :
+    //Input: "abcabcbb"
+    //Output: 3
+    //Explanation: The answer is "abc", with the length of 3.
+
+    private static void lengthOfLongestSubstring(){
+        LongestSubstring substring = new LongestSubstring();
+        System.out.printf(String.valueOf(substring.lengthOfLongestSubstring("pwwekw")));
+    }
+
+    //Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.
+    //Example 1:
+    //Input: "babad"
+    //Output: "bab"
+    //Note: "aba" is also a valid answer.
+
+    private static void longestPalindromic(){
+        LongestPalindrome palindrome = new LongestPalindrome();
+//        System.out.printf(palindrome.longestPalindrome("cbbd"));
+        System.out.println(palindrome.isAnagram("anagram","nagaram"));
     }
 }
