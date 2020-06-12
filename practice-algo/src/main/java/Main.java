@@ -24,12 +24,13 @@ public class Main {
 //        longestIncrease();
 //        excel();
 //        lengthOfLongestSubstring();
-        longestPalindromic();
+//        longestPalindromic();
+//        coinChange();
+//        findPairMatchNum();
+//        validMountainArray();
+//        treeDepth();
+        minAddToMakeValid();
     }
-
-
-
-
 
     //    Given a sorted array nums, remove the duplicates in-place such that each element appear only once and return the new length.
 //    Do not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory.
@@ -127,7 +128,7 @@ public class Main {
     //Given word = "ABCB", return false.
     private static void checkExistsWord() {
         WordSearch wordSearch = new WordSearch();
-        boolean rs = wordSearch.exist(new char[][]{{'C','A','A'},{'A','A','A'},{'B','C','D'}},"AAB");
+        boolean rs = wordSearch.exist(new char[][]{{'A','B','C','E'},{'S','F','C','S'},{'A','D','E','E'}},"ABCCED");
         System.out.printf(String.valueOf(rs));
     }
 
@@ -313,5 +314,85 @@ public class Main {
         LongestPalindrome palindrome = new LongestPalindrome();
 //        System.out.printf(palindrome.longestPalindrome("cbbd"));
         System.out.println(palindrome.isAnagram("anagram","nagaram"));
+    }
+
+
+    //You are given coins of different denominations and a total amount of money amount. Write a function to compute the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return -1.
+    //
+    //Example 1:
+    //Input: coins = [1, 2, 5], amount = 11
+    //Output: 3
+    //Explanation: 11 = 5 + 5 + 1
+    //
+    //Example 2:
+    //Input: coins = [2], amount = 3
+    //Output: -1
+
+    private static void coinChange(){
+        CoinChange coinChange = new CoinChange();
+        coinChange.coinChange(new int[]{1,2,5},11);
+    }
+
+    //There is an Array List having integers:
+    //ArrayList = [integers value. for eg. 5,7, 9 15]
+    //K as Input having integer values…
+    //Find the pair of Integers from Arraylist having difference equal to k
+    private static void findPairMatchNum(){
+        FindPair findPair = new FindPair();
+        List<int[]> rs = findPair.findPairMathNum(new int[]{1,3,4,5,6,7,8,9,2,4,5}, 5);
+        rs.forEach(r->{
+            System.out.printf(Arrays.toString(r));
+        });
+    }
+
+    //Given an array A of integers, return true if and only if it is a valid mountain array.
+    //Recall that A is a mountain array if and only if:
+    //A.length >= 3
+    //There exists some i with 0 < i < A.length - 1 such that:
+    //A[0] < A[1] < ... A[i-1] < A[i]
+    //A[i] > A[i+1] > ... > A[A.length - 1]
+    private static void validMountainArray(){
+        ValidMountainArray valid = new ValidMountainArray();
+        System.out.printf(String.valueOf(valid.validMountainArray(new int[]{1,3,2})));
+    }
+
+    //Given a binary tree, find its maximum depth.
+    //The maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.
+    //Note: A leaf is a node with no children.
+    //
+    //Example:
+    //Given binary tree [3,9,20,null,null,15,7],
+    //    3
+    //   / \
+    //  9  20
+    //    /  \
+    //   15   7
+    //return its depth = 3.
+    private static void treeDepth(){
+        TreeNode treeNode = new TreeNode(3);
+        treeNode.left = new TreeNode(9);
+        treeNode.right = new TreeNode(20);
+        treeNode.right.left = new TreeNode(15);
+        treeNode.right.right = new TreeNode(7);
+
+        TreeDepth treeDepth = new TreeDepth();
+        System.out.printf(String.valueOf(treeDepth.maxDepth(treeNode)));;
+    }
+
+
+    //Given a string S of '(' and ')' parentheses, we add the minimum number of parentheses ( '(' or ')', and in any positions ) so that the resulting parentheses string is valid.
+    //Formally, a parentheses string is valid if and only if:
+    //It is the empty string, or
+    //It can be written as AB (A concatenated with B), where A and B are valid strings, or
+    //It can be written as (A), where A is a valid string.
+    //Given a parentheses string, return the minimum number of parentheses we must add to make the resulting string valid.
+
+    //Example 1:
+    //Input: "())"
+    //Output: 1
+
+    private static void minAddToMakeValid(){
+        MinAddToMakeValid minAddToMakeValid =  new MinAddToMakeValid();
+        System.out.printf(String.valueOf(minAddToMakeValid.minAddToMakeValid("()))((")));;
     }
 }
